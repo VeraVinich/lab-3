@@ -1,5 +1,4 @@
 import tkinter as tk
-from tkinter import ttk
 import random
 import pygame 
 
@@ -86,14 +85,15 @@ canvas.create_window((ENTER_X, ENTER_Y), anchor='nw', window=enter)
 
 text_id = canvas.create_text((TEXT_X, TEXT_Y), anchor='nw', text='', fill='white')
 
-button_show_key = ttk.Button(window, text='Ganerate key', command=click_button)
+button_show_key = tk.Button(window, text='Ganerate key', command=click_button)
 canvas.create_window((BUTTON_KEY_X, BUTTON_KEY_Y), anchor='nw', window=button_show_key)
 
-button_show_anim = ttk.Button(window, text='Show Animation', command=show_animation)
+button_show_anim = tk.Button(window, text='Show Animation', command=show_animation)
 canvas.create_window((BUTTON_ANIM_X, BUTTON_ANIM_Y), anchor='nw', window=button_show_anim)
 
 pygame.mixer.init()
 pygame.mixer.music.load(AUDIO)
 pygame.mixer.music.play(-1)
 
-window.mainloop() 
+if __name__ == '__main__':
+    window.mainloop() 

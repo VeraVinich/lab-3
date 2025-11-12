@@ -2,6 +2,7 @@ import tkinter as tk
 import random
 import pygame 
 
+COLOR_WHITE = 'white'
 
 WINDOW_WIDTH = 1254
 WINDOW_HEIGHT = 627
@@ -74,16 +75,16 @@ window = tk.Tk()
 window.title('lab3')
 window.geometry(F'{WINDOW_WIDTH}x{WINDOW_HEIGHT}')
 
-canvas = tk.Canvas(bg ='white', width=CANVAS_MAX_WIDTH, height=CANVAS_MAX_HEIGHT)
+canvas = tk.Canvas(bg=COLOR_WHITE, width=CANVAS_MAX_WIDTH, height=CANVAS_MAX_HEIGHT)
 canvas.pack(anchor="center", expand=1)
 
-bg_img = tk.PhotoImage(file=BACKGROUND_IMAGE)
-canvas.create_image(0, 0,anchor="nw", image = bg_img)
+bg_image = tk.PhotoImage(file=BACKGROUND_IMAGE)
+canvas.create_image(0, 0,anchor="nw", image=bg_image)
 
 enter = tk.Entry()
 canvas.create_window((ENTER_X, ENTER_Y), anchor='nw', window=enter)
 
-text_id = canvas.create_text((TEXT_X, TEXT_Y), anchor='nw', text='', fill='white')
+text_id = canvas.create_text((TEXT_X, TEXT_Y), anchor='nw', text='', fill=COLOR_WHITE)
 
 button_show_key = tk.Button(window, text='Ganerate key', command=click_button)
 canvas.create_window((BUTTON_KEY_X, BUTTON_KEY_Y), anchor='nw', window=button_show_key)
